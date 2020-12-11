@@ -1,0 +1,8 @@
+include:
+  - https://wondermonger.gitlab.io/ci-tools/v12.0.3/tpl/node/base.yml
+  - https://wondermonger.gitlab.io/ci-tools/v12.0.3/tpl/node/post-install/lint.yml
+  - https://wondermonger.gitlab.io/ci-tools/v12.0.3/tpl/node/test/expanded.yml
+  - https://wondermonger.gitlab.io/ci-tools/v12.0.3/tpl/node/test/coverage.yml
+  - https://wondermonger.gitlab.io/ci-tools/v12.0.3/tpl/node/build/public.yml
+  - https://wondermonger.gitlab.io/ci-tools/v12.0.3/tpl/node/post-build/pages.yml
+  - https://wondermonger.gitlab.io/ci-tools/v12.0.3/tpl/node/deploy/publish.yml
