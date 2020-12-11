@@ -1,0 +1,46 @@
+{
+  "name": "cancellable-promise",
+  "version": "1.0.0-0",
+  "description": "An extension of the Promise class that allows for cancellation.",
+  "keywords": [
+    "abort",
+    "cancel",
+    "cancelation",
+    "cancellation",
+    "promise"
+  ],
+  "repository": "gitlab:wondermonger/cancellable-promise",
+  "license": "MIT",
+  "author": "Michael J. Bondra <mjbondra@gmail.com> (https://mjbondra.com)",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint \"{lib,test}/**/*.js\"",
+    "test": "npm run test:unit &&  npm run test:coverage",
+    "test:coverage": "nyc -r text -r html mocha -R progress \"test/unit/**/*.js\"",
+    "test:unit": "mocha \"test/unit/**/*.js\""
+  },
+  "devDependencies": {
+    "abort-controller": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^7.15.0",
+    "eslint-config-wondermonger": "^6.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "prettier": "^2.2.1",
+    "sinon": "^9.2.1",
+    "sinon-chai": "^3.5.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "dirty-chai": "^2.0.1"
+  }
+}
