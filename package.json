@@ -15,8 +15,9 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint \"{lib,test}/**/*.js\"",
-    "test": "npm run test:unit &&  npm run test:coverage",
+    "test": "npm run test:unit && npm run test:integration",
     "test:coverage": "nyc -r text -r html mocha -R progress \"test/unit/**/*.js\"",
+    "test:integration": "mocha \"test/integration/**/*.js\"",
     "test:unit": "mocha \"test/unit/**/*.js\""
   },
   "devDependencies": {
