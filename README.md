@@ -55,6 +55,8 @@ const promise = new CancellablePromise((resolve, reject, onCancel) => {
   });
 });
 
+setTimeout(() => promise.cancel(), 2500);
+
 promise
   .then(value => console.info("never called"))
   .catchCancel((abortError) => console.warn("cancellation caught here"))
@@ -71,8 +73,6 @@ promise
 
 promise
   .then(value => console.info("never called and AbortError is unhandled"));
-
-promise.cancel();
 
 ```
 
@@ -96,12 +96,12 @@ const promise = new CancellablePromise((resolve, reject, onCancel) => {
   });
 }, controller.signal);
 
+setTimeout(() => controller.abort(), 2500);
+
 promise
   .then(value => console.info("never called"))
   .catchCancel((abortError) => console.warn("cancellation caught here"))
   .catch(error => console.error("never called"));
-
-controller.abort();
 
 ```
 
@@ -123,19 +123,10 @@ const promise = new CancellablePromise((resolve, reject, onCancel) => {
   });
 });
 
+setTimeout(() => promise.cancel(), 2500);
+
 const someAsyncFunction = async () => {
   try {
-    const promise = new CancellablePromise((resolve, reject, onCancel) => {
-      const timeout = setTimeout(() => {
-        console.info("timeout complete");
-        resolve("Foo");
-      }, 5000);
-      onCancel(() => {
-        clearTimeout(timeout);
-        console.info("timeout cleared")
-      });
-    });
-    promise.cancel();
     const value = await promise();
     console.info("never called");
     return value;
@@ -150,17 +141,6 @@ const someAsyncFunction = async () => {
 
 const anotherAsyncFunction = async () => {
   try {
-    const promise = new CancellablePromise((resolve, reject, onCancel) => {
-      const timeout = setTimeout(() => {
-        console.info("timeout complete");
-        resolve("Foo");
-      }, 5000);
-      onCancel(() => {
-        clearTimeout(timeout);
-        console.info("timeout cleared")
-      });
-    });
-    promise.cancel();
     const value = await promise().catchCancel((abortError) => {
       console.warn("cancellation caught here");
       return "Bar";
