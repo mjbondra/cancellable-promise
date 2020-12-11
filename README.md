@@ -76,7 +76,7 @@ promise.cancel();
 
 ```
 
-**Using AbortController**
+**Using [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)**
 
 ```javascript
 'use strict';
@@ -174,9 +174,9 @@ const anotherAsyncFunction = async () => {
 
 ```
 
-**Using AbortController with Promise**
+**Using [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) with Promise**
 
-It requires some additional effort, but you can also use an `AbortController` with an unextended `Promise`. You may not need this library.
+It requires some additional effort, but you can use an `AbortController` with an unextended `Promise`. You may not need this library.
 
 ## Development
 
