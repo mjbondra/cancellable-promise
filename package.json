@@ -1,6 +1,6 @@
 {
   "name": "@wondermonger/cancellable-promise",
-  "version": "1.0.1-0",
+  "version": "1.0.1",
   "description": "An extension of the Promise class that allows for cancellation.",
   "keywords": [
     "abort",
