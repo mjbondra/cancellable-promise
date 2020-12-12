@@ -15,14 +15,17 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint \"{lib,test}/**/*.js\"",
-    "test": "npm run test:unit &&  npm run test:coverage",
-    "test:coverage": "nyc -r text -r html mocha -R progress \"test/unit/**/*.js\"",
+    "lint:fix": "eslint --fix \"{lib,test}/**/*.js\"",
+    "test": "npm run test:unit",
+    "test:coverage": "nyc --all --exclude \"{public,test}/**/*.js\" --report-dir public/coverage --reporter text --reporter html mocha --reporter progress \"test/unit/**/*.js\"",
     "test:unit": "mocha \"test/unit/**/*.js\""
   },
   "devDependencies": {
     "abort-controller": "^3.0.0",
     "babel-eslint": "^10.1.0",
+    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "dirty-chai": "^2.0.1",
     "eslint": "^7.15.0",
     "eslint-config-wondermonger": "^6.0.0",
     "eslint-plugin-import": "^2.22.1",
@@ -33,14 +36,10 @@
     "mocha": "^8.2.1",
     "nyc": "^15.1.0",
     "prettier": "^2.2.1",
-    "sinon": "^9.2.1",
+    "sinon": "^9.2.2",
     "sinon-chai": "^3.5.0"
   },
   "engines": {
     "node": ">=10.0.0"
-  },
-  "dependencies": {
-    "chai": "^4.2.0",
-    "dirty-chai": "^2.0.1"
   }
 }
