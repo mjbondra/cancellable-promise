@@ -5,7 +5,7 @@ An extension of the Promise class that allows for cancellation.
 ## Installation
 
 ```shell
-npm i cancellable-promise
+npm i @wondermonger/cancellable-promise
 ```
 
 ## Usage
@@ -42,7 +42,7 @@ npm i cancellable-promise
 ```javascript
 'use strict';
 
-const CancellablePromise = require('cancellable-promise');
+const CancellablePromise = require("@wondermonger/cancellable-promise");
 
 const promise = new CancellablePromise((resolve, reject, onCancel) => {
   const timeout = setTimeout(() => {
@@ -82,7 +82,7 @@ promise
 'use strict';
 
 const AbortController = require("abort-controller");
-const CancellablePromise = require('cancellable-promise');
+const CancellablePromise = require("@wondermonger/cancellable-promise");
 
 const controller = new AbortController();
 const promise = new CancellablePromise((resolve, reject, onCancel) => {
@@ -110,7 +110,7 @@ promise
 ```javascript
 'use strict';
 
-const CancellablePromise = require('cancellable-promise');
+const CancellablePromise = require("@wondermonger/cancellable-promise");
 
 const promise = new CancellablePromise((resolve, reject, onCancel) => {
   const timeout = setTimeout(() => {
