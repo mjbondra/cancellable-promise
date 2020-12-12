@@ -23,7 +23,9 @@
   "devDependencies": {
     "abort-controller": "^3.0.0",
     "babel-eslint": "^10.1.0",
+    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "dirty-chai": "^2.0.1",
     "eslint": "^7.15.0",
     "eslint-config-wondermonger": "^6.0.0",
     "eslint-plugin-import": "^2.22.1",
@@ -39,9 +41,5 @@
   },
   "engines": {
     "node": ">=10.0.0"
-  },
-  "dependencies": {
-    "chai": "^4.2.0",
-    "dirty-chai": "^2.0.1"
   }
 }
