@@ -48,12 +48,12 @@ const CancellablePromise = require("@wondermonger/cancellable-promise");
 
 const promise = new CancellablePromise((resolve, reject, onCancel) => {
   const timeout = setTimeout(() => {
-    console.info("timeout complete")
-    resolve(new Error("rejected"))
+    console.info("timeout complete");
+    resolve("Foo");
   }, 5000);
   onCancel(() => {
     clearTimeout(timeout);
-    console.info("timeout cleared")
+    console.info("timeout cleared");
   });
 });
 
@@ -94,7 +94,7 @@ const promise = new CancellablePromise((resolve, reject, onCancel) => {
   }, 5000);
   onCancel(() => {
     clearTimeout(timeout);
-    console.info("timeout cleared")
+    console.info("timeout cleared");
   });
 }, controller.signal);
 
@@ -121,7 +121,7 @@ const promise = new CancellablePromise((resolve, reject, onCancel) => {
   }, 5000);
   onCancel(() => {
     clearTimeout(timeout);
-    console.info("timeout cleared")
+    console.info("timeout cleared");
   });
 });
 
