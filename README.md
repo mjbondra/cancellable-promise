@@ -1,5 +1,7 @@
 # CancellablePromise
 
+[![coverage report](https://gitlab.com/wondermonger/cancellable-promise/badges/master/coverage.svg)](https://wondermonger.gitlab.io/cancellable-promise/coverage/index.html)
+
 An extension of the Promise class that allows for cancellation.  
 
 ## Installation
